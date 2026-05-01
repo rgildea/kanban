@@ -52,11 +52,11 @@ export default function CardModal({
     >
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md border border-gray-100 overflow-hidden">
         {/* Modal header */}
-        <div className="px-6 py-4 border-b-2 border-[#ecad0a] flex items-center justify-between">
-          <h2 className="text-base font-bold text-[#032147]">Edit Card</h2>
+        <div className="px-6 py-4 border-b-2 border-accent-yellow flex items-center justify-between">
+          <h2 className="text-base font-bold text-dark-navy">Edit Card</h2>
           <button
             onClick={onClose}
-            className="text-[#888888] hover:text-[#032147] transition-colors p-1 rounded hover:bg-gray-100"
+            className="text-gray-text hover:text-dark-navy transition-colors p-1 rounded hover:bg-gray-100"
             aria-label="Close modal"
           >
             <svg
@@ -79,19 +79,19 @@ export default function CardModal({
         {/* Modal body */}
         <div className="px-6 py-5 flex flex-col gap-4">
           <div>
-            <label className="block text-xs font-semibold text-[#888888] uppercase tracking-wide mb-1.5">
+            <label className="block text-xs font-semibold text-gray-text uppercase tracking-wide mb-1.5">
               Title
             </label>
             <input
               data-testid="modal-title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 text-[#032147] focus:outline-none focus:ring-2 focus:ring-[#209dd7]/40 focus:border-[#209dd7]"
+              className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 text-dark-navy focus:outline-none focus:ring-2 focus:ring-blue-primary/40 focus:border-blue-primary"
               placeholder="Card title"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-[#888888] uppercase tracking-wide mb-1.5">
+            <label className="block text-xs font-semibold text-gray-text uppercase tracking-wide mb-1.5">
               Details
             </label>
             <textarea
@@ -99,7 +99,7 @@ export default function CardModal({
               value={details}
               onChange={(e) => setDetails(e.target.value)}
               rows={5}
-              className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 text-[#032147] focus:outline-none focus:ring-2 focus:ring-[#209dd7]/40 focus:border-[#209dd7] resize-none"
+              className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 text-dark-navy focus:outline-none focus:ring-2 focus:ring-blue-primary/40 focus:border-blue-primary resize-none"
               placeholder="Add more detail..."
             />
           </div>
@@ -109,7 +109,7 @@ export default function CardModal({
         <div className="px-6 pb-5 flex gap-3 justify-end">
           <button
             onClick={onClose}
-            className="px-4 py-2 text-sm text-[#888888] rounded-lg hover:bg-gray-100 transition-colors duration-150"
+            className="px-4 py-2 text-sm text-gray-text rounded-lg hover:bg-gray-100 transition-colors duration-150"
           >
             Cancel
           </button>
@@ -117,7 +117,7 @@ export default function CardModal({
             data-testid="modal-save"
             onClick={handleSave}
             disabled={!title.trim()}
-            className="px-5 py-2 text-sm font-semibold rounded-lg bg-[#753991] text-white hover:bg-[#5e2d75] disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-150"
+            className="px-5 py-2 text-sm font-semibold rounded-lg bg-purple-secondary text-white hover:bg-[#5e2d75] disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-150"
           >
             Save
           </button>

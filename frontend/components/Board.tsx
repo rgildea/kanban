@@ -34,13 +34,13 @@ export default function Board() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
-      <header className="bg-[#032147] px-8 py-4 shadow-md shrink-0">
+      <header className="bg-dark-navy px-8 py-4 shadow-md shrink-0">
         <div className="flex items-center gap-3">
-          <div className="w-1 h-7 rounded-full bg-[#ecad0a]" />
+          <div className="w-1 h-7 rounded-full bg-accent-yellow" />
           <h1 className="text-xl font-bold text-white tracking-tight">
             Kanban Board
           </h1>
-          <span className="ml-2 text-xs text-[#888888] font-medium border border-white/10 rounded-full px-2.5 py-0.5 bg-white/5">
+          <span className="ml-2 text-xs text-gray-text font-medium border border-white/10 rounded-full px-2.5 py-0.5 bg-white/5">
             {columns.reduce((acc, col) => acc + col.cards.length, 0)} cards
           </span>
         </div>

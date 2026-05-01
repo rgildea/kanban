@@ -30,19 +30,19 @@ export default function Card({
           {...provided.dragHandleProps}
           data-testid="card"
           className={`group relative bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-100 cursor-pointer transition-all duration-150
-            ${snapshot.isDragging ? "shadow-xl rotate-1 border-[#209dd7] scale-105" : "hover:shadow-md hover:border-[#209dd7]/40"}`}
+            ${snapshot.isDragging ? "shadow-xl rotate-1 border-blue-primary scale-105" : "hover:shadow-md hover:border-blue-primary/40"}`}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           onClick={() => onOpen(card, columnId)}
         >
           {/* Yellow accent left border */}
-          <div className="absolute left-0 top-0 bottom-0 w-[3px] rounded-l-lg bg-[#ecad0a] opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
+          <div className="absolute left-0 top-0 bottom-0 w-0.75 rounded-l-lg bg-accent-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
 
-          <p className="text-sm font-medium text-[#032147] leading-snug pr-6">
+          <p className="text-sm font-medium text-dark-navy leading-snug pr-6">
             {card.title}
           </p>
           {card.details && (
-            <p className="mt-1 text-xs text-[#888888] line-clamp-2 leading-relaxed">
+            <p className="mt-1 text-xs text-gray-text line-clamp-2 leading-relaxed">
               {card.details}
             </p>
           )}
@@ -53,7 +53,7 @@ export default function Card({
               e.stopPropagation();
               onDelete(columnId, card.id);
             }}
-            className={`absolute top-2 right-2 w-6 h-6 flex items-center justify-center rounded text-[#888888] hover:text-red-500 hover:bg-red-50 transition-all duration-100
+            className={`absolute top-2 right-2 w-6 h-6 flex items-center justify-center rounded text-gray-text hover:text-red-500 hover:bg-red-50 transition-all duration-100
               ${hovered || snapshot.isDragging ? "opacity-100" : "opacity-0"}`}
             aria-label="Delete card"
           >

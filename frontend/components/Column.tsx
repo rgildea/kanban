@@ -46,9 +46,9 @@ export default function Column({
   }
 
   return (
-    <div className="flex flex-col w-72 shrink-0 bg-[#e8edf2] rounded-xl shadow-sm">
+    <div className="flex flex-col w-72 shrink-0 bg-column-bg rounded-xl shadow-sm">
       {/* Column header */}
-      <div className="px-4 pt-4 pb-3 border-b-2 border-[#ecad0a]">
+      <div className="px-4 pt-4 pb-3 border-b-2 border-accent-yellow">
         <div className="flex items-center justify-between gap-2">
           {editing ? (
             <input
@@ -58,7 +58,7 @@ export default function Column({
               onChange={(e) => setNameValue(e.target.value)}
               onBlur={commitRename}
               onKeyDown={handleNameKeyDown}
-              className="flex-1 text-sm font-bold text-[#032147] bg-white border border-[#209dd7] rounded px-2 py-0.5 focus:outline-none focus:ring-2 focus:ring-[#209dd7]/40"
+              className="flex-1 text-sm font-bold text-dark-navy bg-white border border-blue-primary rounded px-2 py-0.5 focus:outline-none focus:ring-2 focus:ring-blue-primary/40"
             />
           ) : (
             <button
@@ -67,13 +67,13 @@ export default function Column({
                 setEditing(true);
                 setNameValue(column.name);
               }}
-              className="flex-1 text-left text-sm font-bold text-[#032147] hover:text-[#209dd7] transition-colors duration-100 truncate"
+              className="flex-1 text-left text-sm font-bold text-dark-navy hover:text-blue-primary transition-colors duration-100 truncate"
               title="Click to rename"
             >
               {column.name}
             </button>
           )}
-          <span className="ml-1 text-xs font-semibold text-[#888888] bg-white/60 rounded-full px-2 py-0.5 tabular-nums">
+          <span className="ml-1 text-xs font-semibold text-gray-text bg-white/60 rounded-full px-2 py-0.5 tabular-nums">
             {column.cards.length}
           </span>
         </div>
@@ -86,7 +86,7 @@ export default function Column({
             ref={provided.innerRef}
             {...provided.droppableProps}
             data-testid={`column-${column.id}`}
-            className={`flex-1 px-3 py-3 flex flex-col gap-2 min-h-[80px] transition-colors duration-150 rounded-b-xl
+            className={`flex-1 px-3 py-3 flex flex-col gap-2 min-h-20 transition-colors duration-150 rounded-b-xl
               ${snapshot.isDraggingOver ? "bg-[#d4e8f5]" : ""}`}
           >
             {column.cards.map((card, index) => (
@@ -113,7 +113,7 @@ export default function Column({
               <button
                 data-testid="add-card-btn"
                 onClick={() => setShowAddForm(true)}
-                className="mt-1 w-full py-1.5 text-xs font-medium text-[#888888] hover:text-[#209dd7] hover:bg-white/60 rounded-lg border border-dashed border-[#c5cdd6] hover:border-[#209dd7] transition-all duration-150 flex items-center justify-center gap-1"
+                className="mt-1 w-full py-1.5 text-xs font-medium text-gray-text hover:text-blue-primary hover:bg-white/60 rounded-lg border border-dashed border-[#c5cdd6] hover:border-blue-primary transition-all duration-150 flex items-center justify-center gap-1"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
